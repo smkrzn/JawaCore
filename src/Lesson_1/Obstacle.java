@@ -8,7 +8,8 @@ public class Obstacle {
 
 
 
-    private String[] obstacls = new String[] {"Бег на 100 метров  ", "Бег на 400 метров  ", "Прыжки в высоту  ", "Прыжки в длинну  "};
+    private String[] obstacls = new String[] {"Бег на 100 метров  ", "Бег на 400 метров  ",
+            "Прыжки в высоту  ", "Прыжки в длинну  "};
 
     public double[] standart() {
         double[] standart = new double[] {run100, run400, jumpUp, jumpLong};

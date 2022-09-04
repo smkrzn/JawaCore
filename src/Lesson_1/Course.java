@@ -2,7 +2,7 @@ package Lesson_1;
 
 public class Course {
 
-    public void check(){
+    public static void check(){
         Obstacle obstacle = new Obstacle();
         Result men = new Result();
         double[] result = men.result();
@@ -17,6 +17,16 @@ public class Course {
                 a = "не пройдено";
             }
             System.out.println(result[i] + "/" + standart[i] + "  " + a);
+        }
+    }
+
+    public static void results(){
+        System.out.println("Результаты:");
+        Team team = new Team();
+        String[] names = team.getTeam();
+        for (int i = 0; i < 4 ; i++){
+            System.out.println(names[i]);
+            check();
         }
     }
 }
