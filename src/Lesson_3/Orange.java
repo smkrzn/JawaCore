@@ -2,8 +2,8 @@ package Lesson_3;
 
 public class Orange extends Frut{
 
-    public Orange(Float quantity, Float weight) {
-        super(quantity, 1.5f);
+    public Orange() {
+        super( 1.5f);
     }
 
     @Override

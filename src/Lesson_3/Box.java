@@ -5,14 +5,47 @@ import java.util.ArrayList;
 public class Box < B extends Frut > {
 
     private B weight;
-    private B quantity;
-    private  Float massa;
+    private Integer quantity;
+    private ArrayList<B> boxList;
 
-    public Float Box(B weight, B quantity) {
-        massa = weight.floatValue() * quantity.floatValue();
-        return massa;
+    public Box(B weight, Integer quantity) {
+        this.weight = weight;
+        this.quantity = quantity;
+        ArrayList<B> bArrayList = new ArrayList<>(quantity);
+        for (int i = 0; i < quantity; i++) {
+            bArrayList.add(weight);
+        }
+        this.boxList = bArrayList;
     }
 
+    public Float getWeightBox() {
+        Float result = 0f;
+        for (B c: getBoxList()) {
+            if (c != null) {
+                Float massa = c.getWeight();
+                result += massa;
+            }
+        }
+        return result;
+    }
 
+    public ArrayList<B> getBoxList() {
+        return boxList;
+    }
+    public boolean compare(Box c){
+        float a = getWeightBox();
+        float b = c.getWeightBox();
+        if( a == b){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public B getWeight() {
+           return weight;
+    }
 
+    public Integer getQuantity() {
+        return quantity;
+    }
 }

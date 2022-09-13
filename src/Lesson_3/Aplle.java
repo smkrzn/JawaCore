@@ -2,10 +2,9 @@ package Lesson_3;
 
 public class Aplle extends Frut{
 
-    public Aplle(Float quantity, Float weight) {
-        super(quantity, 1.0f);
+    public Aplle() {
+        super( 1.0f);
     }
-
 
     @Override
     public int intValue() {

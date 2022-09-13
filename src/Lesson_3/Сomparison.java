@@ -4,5 +4,5 @@ public class Сomparison <T extends Double, K extends Double>{
     T t;
     K k;
 
-    public
+    //public
 }

@@ -2,17 +2,10 @@ package Lesson_3;
 
 public abstract class Frut extends Number{
 
-    private Float quantity;
     private Float weight;
-    //private String name = new String();
 
-    public Frut(Float quantity, Float weight) {
-        this.quantity = quantity;
+    public Frut(Float weight) {
         this.weight = weight;
-    }
-
-    public Float getQuantity() {
-        return quantity;
     }
 
     public Float getWeight() {
