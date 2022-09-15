@@ -20,7 +20,7 @@ public class Main {
         Box<Orange> boxOrange3 = new Box<>(orange, 6);
         Box<Orange> boxOrange4 = new Box<>(orange, 7);
 
-        boxAplle3.compare(boxAplle1);
+        boxAplle2.compare(boxOrange3);
         boxAplle2.pourOver(boxAplle1.getBoxList());
     }
 }

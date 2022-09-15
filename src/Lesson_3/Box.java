@@ -33,9 +33,7 @@ public class Box < B extends Frut > {
         boxList.addAll(boxIn);
         boxIn.clear();
     }
-    public ArrayList<B> getBoxList() {
-        return boxList;
-    }
+
     public boolean compare(Box c){
         float a = getWeightBox();
         float b = c.getWeightBox();
@@ -45,8 +43,9 @@ public class Box < B extends Frut > {
             return false;
         }
     }
-    public B getWeight() {
-           return weight;
+
+    public ArrayList<B> getBoxList() {
+        return boxList;
     }
 
 }
