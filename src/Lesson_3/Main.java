@@ -6,7 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         Aplle aplle = new Aplle();
 
         Box<Aplle> boxAplle1 = new Box<>(aplle, 5);
@@ -21,9 +20,7 @@ public class Main {
         Box<Orange> boxOrange3 = new Box<>(orange, 6);
         Box<Orange> boxOrange4 = new Box<>(orange, 7);
 
-        System.out.println(boxAplle3.compare(boxAplle1));
-      //  boxAplle1 = boxAplle1.pourOver(boxAplle1.getWeightBox(),boxAplle2.getWeight())
-        //System.out.println(Box.pourOver(boxAplle2.getBoxList(),));
-
-     }
+        boxAplle3.compare(boxAplle1);
+        boxAplle2.pourOver(boxAplle1.getBoxList());
+    }
 }
