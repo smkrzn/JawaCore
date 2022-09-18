@@ -12,4 +12,5 @@ public abstract class Frut extends Number{
         return weight;
     }
 
+
 }

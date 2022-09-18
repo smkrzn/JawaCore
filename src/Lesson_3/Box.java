@@ -29,6 +29,8 @@ public class Box < B extends Frut > {
         return result;
     }
 
+
+
     public void pourOver(ArrayList<B> boxIn){
         boxList.addAll(boxIn);
         boxIn.clear();
@@ -48,4 +50,11 @@ public class Box < B extends Frut > {
         return boxList;
     }
 
+    public void setWeight(B weight) {
+        this.weight = weight;
+    }
+
+    public B getWeight() {
+        return weight;
+    }
 }
