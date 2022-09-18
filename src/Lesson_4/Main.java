@@ -35,7 +35,6 @@ public class Main {
         myDirectory.add("Pit", 79005559920l);
 
         String name = "Mike";
-        HashMap<String, HashSet<Long>> result = new HashMap<>();
         myDirectory.get(name);
 
     }
