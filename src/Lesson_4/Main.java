@@ -34,7 +34,7 @@ public class Main {
         myDirectory.add("Kate", 79009346770l);
         myDirectory.add("Pit", 79005559920l);
 
-        String name = "Mike";
+        String name = "Pit";
         myDirectory.get(name);
 
     }

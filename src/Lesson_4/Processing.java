@@ -1,11 +1,10 @@
 package Lesson_4;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class Processing <T extends String>{
+public class Processing {
 
     public ArrayList<String> arrayToList (String[] array){
         ArrayList<String> newArrayList = new ArrayList<>(array.length);
