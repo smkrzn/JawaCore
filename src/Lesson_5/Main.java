@@ -6,8 +6,9 @@ public class Main {
 
         File file = new File("src/Lesson_5/fileWright.csv");
 
-        fileWright(file,"Hello");
-        fileRead(file);
+        fileWright(file,"Hello; poh ;gir\n111;222;444\n768;567;875");
+        Read_My_File read_my_file = new Read_My_File();
+        AppData data = read_my_file.fileRead(file);
     }
 
     static void fileWright(File file, String string) throws IOException{
@@ -18,18 +19,6 @@ public class Main {
             }
         }
         catch (FileNotFoundException e){
-            e.printStackTrace();
-        }
-    }
-
-    static void fileRead(File file) throws IOException{
-        try (FileInputStream fileInputStream = new FileInputStream(file)){
-            int i;
-            do {
-                i = fileInputStream.read();
-                System.out.println((char) i);
-            } while (i != -1);
-        } catch (FileNotFoundException e){
             e.printStackTrace();
         }
     }
