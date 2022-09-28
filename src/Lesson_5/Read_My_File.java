@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Read_My_File {
 
-    static AppData fileRead(File file) throws IOException {
+    static void fileRead(File file) throws IOException {
 
         try (FileReader  fileReader = new FileReader(file)){
             int i;
