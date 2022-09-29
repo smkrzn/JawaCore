@@ -2,29 +2,45 @@ package Lesson_6;
 
 import okhttp3.*;
 
+import java.io.FileInputStream;
+import java.util.Properties;
 import java.io.IOException;
 
 
 public class Main {
+    static Properties prop = new Properties();
     public static void main(String[] args) throws IOException {
-      //  HttpURLConnection url = (HttpURLConnection) new URL("https://api.weather.yandex.ru/v2/informers?").openConnection();
 
+        loadProperties();
         OkHttpClient client = new OkHttpClient();
 
         HttpUrl url = new HttpUrl.Builder()
                 .scheme("https")
-                .host("api.weather.yandex.ru")
-                .addPathSegment("/v2/informers?lat=59.938955&lon=30.315644&[lang=ru_RU]")
-                .addQueryParameter("X-Yandex-API-Key", "a529bc06-3d90-45c2-9424-5b70150bc97d")
+                .host(prop.getProperty("BASE_URL"))
+                .addPathSegment(prop.getProperty("API_VERSION"))
+                .addPathSegment(prop.getProperty("HEADING"))
+                .addQueryParameter("lat",prop.getProperty("SAINT_PETERSBURG_LAT"))
+                .addQueryParameter("lon",prop.getProperty("SAINT_PETERSBURG_LON"))
+                .addQueryParameter("lang",prop.getProperty("LANG"))
+                .addQueryParameter("limit",prop.getProperty("LIMIT"))
+                .addQueryParameter("hours",prop.getProperty("HOURS"))
+                .addQueryParameter("extra",prop.getProperty("EXTRA"))
                 .build();
 
+        System.out.println(url.toString());
+
         Request request = new Request.Builder()
-                .addHeader("accept", "application/json")
-                .addHeader("X-Yandex-API-Key", "a529bc06-3d90-45c2-9424-5b70150bc97d")
+                .addHeader("X-Yandex-API-Key", prop.getProperty("API_KEY"))
                 .url(url)
                 .build();
         String jsonResponse = client.newCall(request).execute().body().string();
 
         System.out.println(jsonResponse);
+    }
+
+    private static void loadProperties() throws IOException {
+        try(FileInputStream configFile = new FileInputStream("src/Materials/lesson6.properties")){
+            prop.load(configFile);
+        }
     }
 }
