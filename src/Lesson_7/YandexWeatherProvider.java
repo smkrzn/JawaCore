@@ -11,8 +11,10 @@ import java.util.Properties;
 
 public class YandexWeatherProvider implements WeatherProvider{
     static Properties prop = new Properties();
+
+
     @Override
-    public void getWeather(Periods periods) throws IOException {
+    public void getWeather(Integer periods) throws IOException {
         loadProperties();
         OkHttpClient client = new OkHttpClient();
 
@@ -24,7 +26,7 @@ public class YandexWeatherProvider implements WeatherProvider{
                 .addQueryParameter("lat",WeatherRequest.getInstance().getCoordinates(0))
                 .addQueryParameter("lon",WeatherRequest.getInstance().getCoordinates(1))
                 .addQueryParameter("lang",prop.getProperty("LANG"))
-                .addQueryParameter("limit",prop.getProperty("LIMIT"))
+                .addQueryParameter("limit",periods.toString())
                 .addQueryParameter("hours",prop.getProperty("HOURS"))
                 .addQueryParameter("extra",prop.getProperty("EXTRA"))
                 .build();
@@ -36,6 +38,8 @@ public class YandexWeatherProvider implements WeatherProvider{
                 .url(url)
                 .build();
         String jsonResponse = client.newCall(request).execute().body().string();
+
+        System.out.println(jsonResponse);
     }
     private static void loadProperties() throws IOException {
         try(FileInputStream configFile = new FileInputStream("src/Materials/lesson6.properties")){

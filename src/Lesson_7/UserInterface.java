@@ -15,7 +15,8 @@ public class UserInterface {
             System.out.println("Введите широту (диапазон от -90 до + 90; С.Ш. '+', Ю.Ш. '-')");
             Float lat = null;
             try {
-                lat = scanner.nextFloat();
+                String a = scanner.nextLine();
+                lat = Float.valueOf(a);
             } catch (NumberFormatException e){
                 e.printStackTrace();
             }
@@ -24,7 +25,8 @@ public class UserInterface {
             System.out.println("Введите долготу (диапазон от -180 до + 180; В.Д. '+', З.Д. '-')");
             Float lon = null;
             try {
-                lon = scanner.nextFloat();
+                String a = scanner.nextLine();
+                lon = Float.valueOf(a);
             } catch (NumberFormatException e){
                 e.printStackTrace();
             }

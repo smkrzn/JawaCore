@@ -1,9 +1,8 @@
 package Lesson_7;
 
 
-import Lesson_7.enums.Functionality;
-import Lesson_7.enums.Periods;
 
+import Lesson_7.enums.Functionality;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,11 +34,10 @@ public class Controller {
     }
 
     public void getCurrentWeather() throws IOException {
-        weatherProvider.getWeather(Periods.NOW);
+        weatherProvider.getWeather(1);
     }
 
-    public void getWeatherIn5Days() {
-        throw new RuntimeException("Implement in h/w");
+    public void getWeatherIn5Days() throws IOException {
+        weatherProvider.getWeather(5);;
     }
 }
-

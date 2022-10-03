@@ -30,4 +30,3 @@ public final class ApplicationGlobalState {
         return this.API_KEY;
     }
 }
-

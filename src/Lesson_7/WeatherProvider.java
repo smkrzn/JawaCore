@@ -6,6 +6,6 @@ import java.io.IOException;
 
 public interface WeatherProvider {
 
-    void getWeather(Periods periods) throws IOException;
+    void getWeather(Integer periods) throws IOException;
 
 }
