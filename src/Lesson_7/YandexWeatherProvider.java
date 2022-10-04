@@ -1,10 +1,8 @@
 package Lesson_7;
 
-import Lesson_7.enums.Periods;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -26,7 +24,7 @@ public class YandexWeatherProvider implements WeatherProvider{
                 .addQueryParameter("lat",WeatherRequest.getInstance().getCoordinates(0))
                 .addQueryParameter("lon",WeatherRequest.getInstance().getCoordinates(1))
                 .addQueryParameter("lang",prop.getProperty("LANG"))
-                .addQueryParameter("limit",periods.toString())
+                .addQueryParameter("limit",WeatherRequest.getInstance().getPeriod())
                 .addQueryParameter("hours",prop.getProperty("HOURS"))
                 .addQueryParameter("extra",prop.getProperty("EXTRA"))
                 .build();

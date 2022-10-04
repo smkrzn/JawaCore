@@ -15,9 +15,14 @@ public class WeatherRequest {
         return INSTANCE;
     }
 
-    public void setCoordinates (Float lat, Float lon){
+    public void setCoordinates (Float lat, Float lon,String var){
         this.coordinates[0] = lat;
         this.coordinates[1] = lon;
+        if (var.equals(1)){
+            this.period = "1";
+        } else {
+            this.period = "5";
+        }
     }
 
     public String getCoordinates(int i) {
@@ -26,11 +31,6 @@ public class WeatherRequest {
 
     public String getPeriod() {
         return period;
-    }
-
-
-    public void setPeriod(String period) {
-        this.period = period;
     }
 
 }

@@ -31,14 +31,13 @@ public class UserInterface {
                 e.printStackTrace();
             }
             checkLon(lon);
-            setCoordinates(lat,lon);
 
             System.out.println("Введите ответ: 1 - Получить текущую погоду, " +
                     "2 - Получить погоду на следующие 5 дней, " +
                     "выход (exit) - завершить работу");
             String result = scanner.nextLine();
-
             checkIsExit(result);
+            setCoordinates(lat,lon, result);
 
             try {
                 validateUserInput(result);
@@ -63,8 +62,8 @@ public class UserInterface {
         }
     }
 
-    private void setCoordinates(Float lat, Float lon) {
-        WeatherRequest.getInstance().setCoordinates(lat, lon);
+    private void setCoordinates(Float lat, Float lon, String result) {
+        WeatherRequest.getInstance().setCoordinates(lat, lon, result);
     }
 
 
